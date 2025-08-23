@@ -1,0 +1,15 @@
+<mvc:View
+    controllerName="qualitybtpportal.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page title="Quality Login">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Input id="employeeId" placeholder="Employee ID"/>
+                <Input id="password" placeholder="Password" type="Password"/>
+                <Button text="Login" press="onLoginPress"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

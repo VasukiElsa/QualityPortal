@@ -1,0 +1,56 @@
+<mvc:View
+    controllerName="qualitybtpportal.controller.Inspectionlot"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page title="Inspection Lots">
+        <headerContent>
+            <Button text="Back" icon="sap-icon://nav-back" press="onNavBack"/>
+        </headerContent>
+
+        <content>
+            <!-- Table bound to ZDD_QUA_INSPECTION EntitySet -->
+            <Table id="inspectionTable"
+                   inset="false"
+                   items="{/ZDD_QUA_INSPECTION}">
+                
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Inspection Lots" level="H2"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column><Text text="Inspection Lot"/></Column>
+                    <Column><Text text="Plant"/></Column>
+                    <Column><Text text="Inspection Type"/></Column>
+                    <Column><Text text="Material"/></Column>
+                    <Column><Text text="Material Category"/></Column>
+                    <Column><Text text="Lot Quantity"/></Column>
+                    <Column><Text text="UoM"/></Column>
+                    <Column><Text text="Usage Decision"/></Column>
+                    <Column><Text text="Decision Status"/></Column>
+                    <Column><Text text="Short Text"/></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{prueflos}"/>
+                            <Text text="{werk}"/>
+                            <Text text="{art}"/>
+                            <Text text="{selmatnr}"/>
+                            <Text text="{Material_catogery}"/>
+                            <Text text="{losmenge}"/>
+                            <Text text="{mengeneinh}"/>
+                            <Text text="{stat35}"/>
+                            <Text text="{Decision_Status}"/>
+                            <Text text="{kurztext}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

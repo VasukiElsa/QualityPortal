@@ -1,0 +1,50 @@
+<mvc:View
+    controllerName="qualitybtpportal.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page
+        id="homePage"
+        title="{i18n>homePageTitle}"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+        <content>
+            <!-- A Vertical Box to hold all content on the page -->
+            <VBox
+                class="sapUiSmallMargin">
+                <Title
+                    text="Welcome to the Home Page!"
+                    level="H1"
+                    class="sapUiLargeMarginTop sapUiLargeMarginBottom" />
+                <Text
+                    text="You have successfully logged in. This is your main dashboard."
+                    class="sapUiMediumMarginBottom" />
+            </VBox>
+
+            <!-- Tile Container for the main dashboard tiles -->
+            <TileContainer
+                id="tileContainer"
+                class="sapUiResponsiveContentPadding">
+                <StandardTile
+                    title="Inspection Lot"
+                    info="Manage Inspection lots"              
+                    press="onInspectionTilePress" />
+                <StandardTile
+                    title="Result Records"
+                    info="Manage Result Records"          
+                    press="onResultRecordsTilePress" />
+                <StandardTile
+                    title="Usage Decision"
+                    info="Manage Usage Decision"
+                    press="onUsageDecisiontTilePress" />
+            </TileContainer>
+
+            <!-- Log out button, placed at the bottom or in a logical position -->
+            <Button
+                text="Log Out"
+                type="Reject"
+                press="onLogoutPress"
+                class="sapUiSmallMarginTop sapUiLargeMarginBottom" />
+        </content>
+    </Page>
+</mvc:View>

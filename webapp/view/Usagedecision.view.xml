@@ -1,0 +1,65 @@
+<mvc:View
+    controllerName="qualitybtpportal.controller.Usagedecision"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page title="Usage Decisions">
+        <headerContent>
+            <Button text="Back" icon="sap-icon://nav-back" press="onNavBack"/>
+        </headerContent>
+
+        <content>
+            <Table id="decisionTable"
+                   inset="false"
+                   items="{/ZDD_QUA_DECISION}">
+                
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Quality Usage Decisions" level="H2"/>
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column><Text text="Inspection Lot"/></Column>
+                    <Column><Text text="Plant"/></Column>
+                    <Column><Text text="Material"/></Column>
+                    <Column><Text text="Object Short Text"/></Column>
+                    <Column><Text text="Lot Quantity"/></Column>
+                    <Column><Text text="Usage Decision Made"/></Column>
+                    <Column><Text text="Status Text"/></Column>
+                    <Column><Text text="Recorded"/></Column>
+                    <Column><Text text="Inspected"/></Column>
+                    <Column><Text text="Defects"/></Column>
+                    <Column><Text text="Usage Decision Code"/></Column>
+                    <Column><Text text="Usage Decision Result"/></Column>
+                    <Column><Text text="Usage Decision Type"/></Column>
+                    <Column><Text text="UD Code Date"/></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{prueflos}"/>
+                            <Text text="{werk}"/>
+                            <Text text="{selmatnr}"/>
+                            <Text text="{ktextmat}"/>
+                            <Text text="{losmenge}"/>
+                            <!-- formatter for Yes/No -->
+                            <Text text="{path:'stat35', formatter:'.formatDecisionMade'}"/>
+                            <Text text="{StatusText}"/>
+                            <Text text="{iststpumf}"/>
+                            <Text text="{anzwertg}"/>
+                            <Text text="{anzfehler}"/>
+                            <!-- formatter for decision code -->
+                            <Text text="{path:'vcode', formatter:'.formatDecisionCode'}"/>
+                            <Text text="{UsageDecisionResult}"/>
+                            <Text text="{UsageDecisionType}"/>
+                            <Text text="{path:'vdatum', type:'sap.ui.model.type.Date', formatOptions:{style:'medium'}}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

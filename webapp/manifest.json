@@ -1,0 +1,202 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "qualitybtpportal",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.5",
+      "toolsId": "90c4a8a7-e33f-40a2-9c28-2727536eacfc"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/Z_SER_BINDING/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.14",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "qualitybtpportal.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "qualitybtpportal.view",
+        "async": true,
+        "viewPath": "qualitybtpportal.view"
+      },
+      "routes": [
+
+        {
+
+          "name": "Login",
+
+          "pattern": "",
+
+          "target": "Login"
+
+        },
+
+        {
+
+          "name": "Home",
+
+          "pattern": "home",
+
+          "target": "Home"
+
+        },
+        {
+
+          "name": "Inspectionlot",
+
+          "pattern": "inspectionlot",
+
+          "target": "Inspectionlot"
+
+        },
+        {
+
+          "name": "Resultrecords",
+
+          "pattern": "resultrecords",
+
+          "target": "Resultrecords"
+
+        },
+        {
+
+          "name": "Usagedecision",
+
+          "pattern": "usagedecision",
+
+          "target": "Usagedecision"
+
+        }
+        
+      ],
+      "targets": {
+
+        "Login": {
+
+          "viewName": "Login",
+
+          "viewType": "XML",
+
+          "viewLevel": 1
+
+        },
+
+        "Home": {
+
+          "viewName": "Home",
+
+          "viewType": "XML",
+
+          "viewLevel": 2
+
+        },
+
+        "Inspectionlot": {
+
+          "viewName": "Inspectionlot",
+
+          "viewType": "XML",
+
+          "viewLevel": 3
+
+        },
+
+        "Resultrecords": {
+
+          "viewName": "Resultrecords",
+
+          "viewType": "XML",
+
+          "viewLevel": 4
+
+        },
+
+        "Usagedecision": {
+
+          "viewName": "Usagedecision",
+
+          "viewType": "XML",
+
+          "viewLevel": 5
+
+        }
+
+      }
+    },
+    "rootView": {
+      "viewName": "qualitybtpportal.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
