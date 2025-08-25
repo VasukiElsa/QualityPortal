@@ -2,14 +2,65 @@
     controllerName="qualitybtpportal.controller.Login"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
     displayBlock="true">
-    <Page title="Quality Login">
-        <content>
-            <VBox class="sapUiSmallMargin">
-                <Input id="employeeId" placeholder="Employee ID"/>
-                <Input id="password" placeholder="Password" type="Password"/>
-                <Button text="Login" press="onLoginPress"/>
-            </VBox>
-        </content>
+    <Page
+        showHeader="false"
+        class="sapUiResponsiveContentPadding loginPageBackground">
+        <VBox
+            alignItems="Center"
+            justifyContent="Center"
+            height="100%"
+            class="loginContainer">
+            <Panel
+                width="auto"
+                class="sapUiResponsiveMargin loginCard">
+                <VBox alignItems="Center">
+                    <!-- Icon for the Quality Portal, you can change this icon if needed -->
+                    <core:Icon
+                        src="sap-icon://quality-issue"
+                        size="3rem"
+                        color="#005792"
+                        class="sapUiSmallMarginBottom" />
+
+                    <!-- Title for the application -->
+                    <Title
+                        text="Quality Portal Login"
+                        level="H1"
+                        class="sapUiSmallMarginBottom" />
+
+                    <!-- Employee ID Input Field with a custom icon -->
+                    <Input
+                        id="employeeId"
+                        placeholder="Employee ID"
+                        width="100%"
+                        class="sapUiSmallMarginBottom">
+                        <customData>
+                            <core:CustomData key="icon" value="sap-icon://person-placeholder" />
+                        </customData>
+                    </Input>
+
+                    <!-- Password Input Field with a custom icon -->
+                    <Input
+                        id="password"
+                        placeholder="Password"
+                        type="Password"
+                        width="100%"
+                        class="sapUiSmallMarginBottom">
+                        <customData>
+                            <core:CustomData key="icon" value="sap-icon://key" />
+                        </customData>
+                    </Input>
+
+                    <!-- Login Button with a professional look -->
+                    <Button
+                        text="Login"
+                        press="onLoginPress"
+                        type="Emphasized"
+                        width="100%"
+                        class="sapUiSmallMarginTop" />
+                </VBox>
+            </Panel>
+        </VBox>
     </Page>
 </mvc:View>

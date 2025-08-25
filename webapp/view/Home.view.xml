@@ -2,49 +2,88 @@
     controllerName="qualitybtpportal.controller.Home"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
     displayBlock="true">
+
     <Page
         id="homePage"
-        title="{i18n>homePageTitle}"
-        showNavButton="true"
-        navButtonPress="onNavBack">
+        class="sapUiResponsiveContentPadding dashboardPageBackground">
+
+        <customHeader>
+            <Bar class="dashboardHeader">
+                <contentLeft>
+                    <Title text="Quality Dashboard" class="dashboardTitle" />
+                </contentLeft>
+                <contentRight>
+                    <Button
+                        id="logoutButton"
+                        text="Logout"
+                        press="onLogoutPress"
+                        icon="sap-icon://log"
+                        type="Reject" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
         <content>
-            <!-- A Vertical Box to hold all content on the page -->
-            <VBox
-                class="sapUiSmallMargin">
-                <Title
-                    text="Welcome to the Home Page!"
-                    level="H1"
-                    class="sapUiLargeMarginTop sapUiLargeMarginBottom" />
-                <Text
-                    text="You have successfully logged in. This is your main dashboard."
-                    class="sapUiMediumMarginBottom" />
-            </VBox>
+            <l:Grid
+                defaultSpan="L3 M6 S12"
+                hSpacing="2"
+                vSpacing="2"
+                class="sapUiMediumMarginTop">
 
-            <!-- Tile Container for the main dashboard tiles -->
-            <TileContainer
-                id="tileContainer"
-                class="sapUiResponsiveContentPadding">
-                <StandardTile
-                    title="Inspection Lot"
-                    info="Manage Inspection lots"              
-                    press="onInspectionTilePress" />
-                <StandardTile
-                    title="Result Records"
-                    info="Manage Result Records"          
-                    press="onResultRecordsTilePress" />
-                <StandardTile
-                    title="Usage Decision"
-                    info="Manage Usage Decision"
-                    press="onUsageDecisiontTilePress" />
-            </TileContainer>
+                <GenericTile
+                    header="Inspection Lot"
+                    press="onInspectionTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://inspection" size="2.5rem" color="Default" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="Manage inspection lots efficiently." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
 
-            <!-- Log out button, placed at the bottom or in a logical position -->
-            <Button
-                text="Log Out"
-                type="Reject"
-                press="onLogoutPress"
-                class="sapUiSmallMarginTop sapUiLargeMarginBottom" />
+                <GenericTile
+                    header="Result Records"
+                    press="onResultRecordsTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://record" size="2.5rem" color="Default" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="Easily track and manage results." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
+
+                <GenericTile
+                    header="Usage Decision"
+                    press="onUsageDecisiontTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://decision" size="2.5rem" color="Default" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="Make informed usage decisions." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
+            </l:Grid>
         </content>
     </Page>
 </mvc:View>

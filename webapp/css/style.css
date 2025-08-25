@@ -1,1 +1,89 @@
-/* Enter your custom styles here */
+/* Add this CSS to your component's style sheet, e.g., 'styles/Login.css' */
+
+/* Background gradient for the entire page */
+.loginPageBackground {
+    background: linear-gradient(to bottom right, #f0f4f8, #c1d5e0); /* A subtle, modern gradient */
+}
+
+/* Container to center the login card vertically and horizontally */
+.loginContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The styling for the white login card */
+.loginCard {
+    width: 350px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer, more professional shadow */
+    border-radius: 12px;
+    background-color: white;
+}
+
+/* General styling for input fields */
+.loginCard .sapMInputBaseInner {
+    padding-left: 2.5rem; /* Space for the icon */
+    border-radius: 6px;
+}
+
+/* Style for the Emphasized 'Login' button */
+.loginCard .sapMBtn.sapMBtnEmphasized > .sapMBtnInner {
+    background-color: #0070c0; /* A standard Fiori-like blue */
+    color: white;
+    border-color: #0070c0;
+    font-weight: bold;
+}
+
+/* Hover effect for the button */
+.loginCard .sapMBtn.sapMBtnEmphasized:hover > .sapMBtnInner {
+    background-color: #005a96;
+    border-color: #005a96;
+}
+
+.dashboardPageBackground {
+    background-color: #f0f2f5;
+}
+
+.sapUiPage > .sapMBar-Header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sapUiPage > .sapMBar-Header .sapMTitle {
+    font-weight: bold;
+    color: #333;
+}
+
+.tileShadow {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+    min-height: 250px; 
+    min-width: 250px; 
+    padding: 1.6rem; 
+}
+
+.tileShadow:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboardHeader {
+    background-color: #005792;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardHeader .dashboardTitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000000;
+    align-items: center;
+}
+
+.dashboardHeader .sapMBtn .sapMBtnDefault {
+    color: #ffffff;
+}
+</style>
